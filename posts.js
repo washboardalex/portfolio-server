@@ -1,11 +1,31 @@
-const app = require("express")();
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const mailer = require('./mailer/mailer.js');
-const cors = require('cors');
+const path = require('path');
+
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
-app.use(cors());
-app.options('*', cors());
+
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+//Static file declaration
+app.use(express.static(path.join(__dirname, 'client/build')));
+//production mode
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  //
+  app.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname = 'client/build/index.html'));
+  })
+}
+//build mode
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/public/index.html'));
+})
+
 
 app.post('*', (req, res, next) => {
     console.log('we are gettomg jere')
@@ -23,6 +43,6 @@ app.post('*', (req, res, next) => {
 });
 
 
-app.listen(3001, ()=> {
-  console.log('app is running on port 3001');
+app.listen(port, ()=> {
+  console.log(`app is running on port ${port}`);
 })

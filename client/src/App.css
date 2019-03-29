@@ -1,0 +1,126 @@
+h1, h5 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size:110%;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width:100%;
+}
+
+
+.green-back {
+  /*border-right: 5px solid rgb(62,194,143);
+  border-top: 5px solid rgb(62,194,143);*/
+  border-left: 5px solid rgb(62,194,143); 
+} 
+
+.heading { 
+  letter-spacing: 0.3em;
+  margin-bottom: 20px; 
+}
+
+.landing-container {
+  /*background: linear-gradient(rgba(255,255,255,0),rgba(0,0,0,1)) no-repeat center center fixed, url("./static/bg22.jpg") no-repeat center center fixed; */
+  z-index:-2;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width:100vw;
+
+}
+
+.el-wrap-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.el-wrap-right {
+  display:flex;
+  flex-direction: row-reverse;
+}
+
+@media (max-width:405px) {
+  .pic-circle-dimsn {
+    width: 300px;
+    height: 300px;
+  }
+
+  .portfolio-image {
+    width:100%;
+  }
+}
+
+@media (min-width: 406px) {
+  .pic-circle-dimsn {
+    width: 400px;
+    height: 400px;
+  }
+
+  .portfolio-image {
+    width:350px;
+  }
+}
+
+.pic-circle {
+  margin-top:150px;
+  margin-bottom:50px;
+
+  border-radius: 50%;
+  background-image: url(./static/face.png);
+  background-size: cover;
+  background-position: center;
+  border:5px solid silver;
+}
+
+.fill-container {
+  height:100%;
+  width:100%;
+}
+
+
+.purple-back {
+  border-left: 5px solid rgb(86,81,255);
+}
+
+.intro-text-card {
+  color:silver;
+  width: 90%;
+  display: block;
+  padding:40px;
+}
+
+.input-class {
+  width:100%;
+}
+
+.flexbox-custom {
+  display:flex;
+  justify-content: space-between;
+}
+
+.img-hover {
+  transform: scale(1);
+  transition: transform .25s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+  transition: transform .25s ease-out;
+}
